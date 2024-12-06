@@ -1,4 +1,4 @@
-package com.jssolutions.coffee_shop_api.infrastructure.log;
+package com.jssolutions.coffee_shop_api.infrastructure.services;
 
 import com.jssolutions.coffee_shop_api.domain.Log;
 import com.jssolutions.coffee_shop_api.infrastructure.repositories.LogRepository;
