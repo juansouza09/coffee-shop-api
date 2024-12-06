@@ -7,7 +7,7 @@ import com.jssolutions.coffee_shop_api.application.usecase.DeleteProductUseCase;
 import com.jssolutions.coffee_shop_api.application.usecase.ListProductsUseCase;
 import com.jssolutions.coffee_shop_api.application.usecase.UpdateProductUseCase;
 import com.jssolutions.coffee_shop_api.domain.Product;
-import com.jssolutions.coffee_shop_api.infrastructure.log.LogService;
+import com.jssolutions.coffee_shop_api.infrastructure.services.LogService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -39,7 +39,7 @@ public class ProductController {
 
         List<ProductResponse> products = listProductsUseCase.execute().stream()
                 .map(product -> new ProductResponse(product.getId(), product.getName(), product.getPrice()))
-                .collect(Collectors.toList());
+                .toList();
 
         logService.logApiCall(null, "Response: " + products);
 
