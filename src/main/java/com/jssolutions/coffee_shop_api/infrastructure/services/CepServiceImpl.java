@@ -2,6 +2,7 @@ package com.jssolutions.coffee_shop_api.infrastructure.services;
 
 import com.jssolutions.coffee_shop_api.domain.Address;
 import com.jssolutions.coffee_shop_api.domain.services.CepService;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -13,14 +14,16 @@ import org.springframework.web.util.UriComponentsBuilder;
 public class CepServiceImpl implements CepService {
 
     private final RestTemplate restTemplate;
+    private final String baseUrl;
 
-    public CepServiceImpl(RestTemplate restTemplate) {
+    public CepServiceImpl(RestTemplate restTemplate, @Value("${api.base.url}") String baseUrl) {
         this.restTemplate = restTemplate;
+        this.baseUrl = baseUrl;
     }
 
     @Override
     public Address getAddressByCep(String cep) {
-        String url = UriComponentsBuilder.fromUriString("https://viacep.com.br/ws/{cep}/json/")
+        String url = UriComponentsBuilder.fromUriString(baseUrl + "/ws/{cep}/json/")
                 .buildAndExpand(cep)
                 .toUriString();
 
@@ -28,10 +31,8 @@ public class CepServiceImpl implements CepService {
             ResponseEntity<Address> response = restTemplate.exchange(url, HttpMethod.GET, null, Address.class);
             return response.getBody();
         } catch (RestClientException e) {
-            System.out.println("Erro ao chamar a API ViaCEP: " + e.getMessage());
+            System.out.println("Erro ao chamar a API: " + e.getMessage());
             return null;
         }
     }
-
-
 }
