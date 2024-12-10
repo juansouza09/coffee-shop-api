@@ -194,11 +194,13 @@ A **Coffee Shop API** é uma aplicação desenvolvida em **Spring Boot**, fornec
 3. Certifique-se de que o arquivo `Dockerfile` está configurado corretamente na raiz do projeto. Um exemplo básico seria:
 
    ```properties
-    FROM openjdk:21-jdk-slim
-    VOLUME /tmp
-    ARG JAR_FILE=target/coffee-shop-api-0.0.1-SNAPSHOT.jar
-    COPY ${JAR_FILE} app.jar
-    ENTRYPOINT ["java", "-jar", "/app.jar"]
+    FROM openjdk:21
+    
+    COPY target/coffee-shop-api-0.0.1-SNAPSHOT.jar app.jar
+    
+    EXPOSE 8080
+    
+    ENTRYPOINT ["java", "-jar", "app.jar"]
    ```
 
 4. Execute o contêiner Docker:
