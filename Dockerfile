@@ -1,6 +1,6 @@
 FROM openjdk:21
 
-COPY target/coffee_shop_api-0.0.1-SNAPSHOT.jar app.jar
+COPY target/coffee-shop-api-0.0.1-SNAPSHOT.jar app.jar
 
 EXPOSE 8080
 
