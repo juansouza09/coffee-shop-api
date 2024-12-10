@@ -15,6 +15,10 @@ A **Coffee Shop API** é uma aplicação desenvolvida em **Spring Boot**, fornec
 - **Arquitetura:** Clean Architecture
 - **Testes:** Spring Test e Mockoon
 
+## System Design
+
+![system-design](https://github.com/user-attachments/assets/6585883f-d919-43d8-8075-b0f98839558d)
+
 ## Endpoints
 
 ### Endereços
