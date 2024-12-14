@@ -6,13 +6,12 @@ import com.jssolutions.coffee_shop_api.application.usecase.CreateProductUseCase;
 import com.jssolutions.coffee_shop_api.application.usecase.DeleteProductUseCase;
 import com.jssolutions.coffee_shop_api.application.usecase.ListProductsUseCase;
 import com.jssolutions.coffee_shop_api.application.usecase.UpdateProductUseCase;
-import com.jssolutions.coffee_shop_api.domain.Product;
+import com.jssolutions.coffee_shop_api.domain.entities.Product;
 import com.jssolutions.coffee_shop_api.infrastructure.services.LogService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/products")

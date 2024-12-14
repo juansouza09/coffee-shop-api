@@ -1,7 +1,6 @@
 package com.jssolutions.coffee_shop_api.application.usecase;
 
-import com.jssolutions.coffee_shop_api.domain.Sale;
-import com.jssolutions.coffee_shop_api.infrastructure.repositories.ProductRepository;
+import com.jssolutions.coffee_shop_api.domain.entities.Sale;
 import com.jssolutions.coffee_shop_api.infrastructure.repositories.SaleRepository;
 import org.springframework.stereotype.Service;
 
