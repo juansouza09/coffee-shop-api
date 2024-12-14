@@ -1,6 +1,6 @@
 package com.jssolutions.coffee_shop_api.infrastructure.services;
 
-import com.jssolutions.coffee_shop_api.domain.Log;
+import com.jssolutions.coffee_shop_api.domain.entities.Log;
 import com.jssolutions.coffee_shop_api.infrastructure.repositories.LogRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package com.jssolutions.coffee_shop_api.domain;
+package com.jssolutions.coffee_shop_api.domain.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -23,7 +23,7 @@ public class Product {
 
     public Product(String name, double price) {
         if (price < 0) {
-            throw new IllegalArgumentException("Price cannot be negative");
+            throw new IllegalArgumentException("O preço não pode ser negativo.");
         }
         this.name = name;
         this.price = price;
@@ -31,7 +31,7 @@ public class Product {
 
     public void update(String name, double price) {
         if (price < 0) {
-            throw new IllegalArgumentException("Price cannot be negative");
+            throw new IllegalArgumentException("O preço não pode ser negativo.");
         }
         this.name = name;
         this.price = price;

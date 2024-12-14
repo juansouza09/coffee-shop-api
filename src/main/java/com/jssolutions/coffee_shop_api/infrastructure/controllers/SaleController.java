@@ -4,8 +4,8 @@ import com.jssolutions.coffee_shop_api.application.dto.SaleRequest;
 import com.jssolutions.coffee_shop_api.application.dto.SaleResponse;
 import com.jssolutions.coffee_shop_api.application.usecase.CreateSaleUseCase;
 import com.jssolutions.coffee_shop_api.application.usecase.ListSalesUseCase;
-import com.jssolutions.coffee_shop_api.domain.Address;
-import com.jssolutions.coffee_shop_api.domain.Sale;
+import com.jssolutions.coffee_shop_api.domain.entities.Address;
+import com.jssolutions.coffee_shop_api.domain.entities.Sale;
 import com.jssolutions.coffee_shop_api.domain.services.CepService;
 import com.jssolutions.coffee_shop_api.infrastructure.services.LogService;
 import org.springframework.http.HttpStatus;
@@ -13,7 +13,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/sales")
