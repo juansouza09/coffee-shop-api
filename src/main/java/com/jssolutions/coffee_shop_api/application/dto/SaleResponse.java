@@ -1,6 +1,6 @@
 package com.jssolutions.coffee_shop_api.application.dto;
 
-import com.jssolutions.coffee_shop_api.domain.Address;
+import com.jssolutions.coffee_shop_api.domain.entities.Address;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 

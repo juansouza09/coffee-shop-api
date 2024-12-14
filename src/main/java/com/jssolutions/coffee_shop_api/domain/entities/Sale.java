@@ -1,4 +1,4 @@
-package com.jssolutions.coffee_shop_api.domain;
+package com.jssolutions.coffee_shop_api.domain.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

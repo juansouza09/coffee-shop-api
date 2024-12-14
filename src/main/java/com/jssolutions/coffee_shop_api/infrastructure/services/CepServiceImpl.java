@@ -1,6 +1,6 @@
 package com.jssolutions.coffee_shop_api.infrastructure.services;
 
-import com.jssolutions.coffee_shop_api.domain.Address;
+import com.jssolutions.coffee_shop_api.domain.entities.Address;
 import com.jssolutions.coffee_shop_api.domain.services.CepService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpMethod;

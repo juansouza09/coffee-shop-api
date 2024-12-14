@@ -1,6 +1,6 @@
 package com.jssolutions.coffee_shop_api;
 
-import com.jssolutions.coffee_shop_api.domain.Address;
+import com.jssolutions.coffee_shop_api.domain.entities.Address;
 import com.jssolutions.coffee_shop_api.infrastructure.services.CepServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
