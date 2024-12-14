@@ -21,10 +21,46 @@ A **Coffee Shop API** é uma aplicação desenvolvida em **Spring Boot**, fornec
 
 ## Endpoints
 
+### Autenticação
+
+- **POST** `/auth/signup`
+  - **Descrição:** Registra um novo usuário.
+  - **Request Body:**
+    ```json
+    {
+      "name": "João Silva",
+      "email": "joao.silva@example.com",
+      "password": "senha123"
+    }
+    ```
+  - **Response:**
+    ```json
+    {
+      "message": "Usuário registrado com sucesso."
+    }
+    ```
+
+- **POST** `/auth/login`
+  - **Descrição:** Autentica um usuário e retorna um token JWT.
+  - **Request Body:**
+    ```json
+    {
+      "email": "joao.silva@example.com",
+      "password": "senha123"
+    }
+    ```
+  - **Response:**
+    ```json
+    {
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+    }
+    ```
+
 ### Endereços
 
 - **GET** `/api/address/{cep}`
     - **Descrição:** Retorna o endereço com base no CEP fornecido.
+    - **Headers:** `Authorization: Bearer <token>`
     - **Exemplo de Requisição:**
       ```bash
       GET /api/address/12345678
@@ -45,6 +81,7 @@ A **Coffee Shop API** é uma aplicação desenvolvida em **Spring Boot**, fornec
 
 - **GET** `/api/products`
     - **Descrição:** Retorna a lista de produtos disponíveis.
+    - **Headers:** `Authorization: Bearer <token>`
     - **Response:**
       ```json
       [
@@ -63,6 +100,7 @@ A **Coffee Shop API** é uma aplicação desenvolvida em **Spring Boot**, fornec
 
 - **POST** `/api/products`
     - **Descrição:** Adiciona um novo produto.
+    - **Headers:** `Authorization: Bearer <token>`
     - **Request Body:**
       ```json
       {
@@ -81,6 +119,7 @@ A **Coffee Shop API** é uma aplicação desenvolvida em **Spring Boot**, fornec
 
 - **PUT** `/api/products/{id}`
     - **Descrição:** Atualiza os detalhes de um produto existente.
+    - **Headers:** `Authorization: Bearer <token>`
     - **Request Body:**
       ```json
       {
@@ -99,6 +138,7 @@ A **Coffee Shop API** é uma aplicação desenvolvida em **Spring Boot**, fornec
 
 - **DELETE** `/api/products/{id}`
     - **Descrição:** Remove um produto pelo ID fornecido.
+    - **Headers:** `Authorization: Bearer <token>`
     - **Response:**
       ```json
       {
@@ -110,6 +150,7 @@ A **Coffee Shop API** é uma aplicação desenvolvida em **Spring Boot**, fornec
 
 - **GET** `/api/sales`
     - **Descrição:** Retorna a lista de vendas realizadas.
+    - **Headers:** `Authorization: Bearer <token>`
     - **Response:**
       ```json
       [
@@ -131,6 +172,7 @@ A **Coffee Shop API** é uma aplicação desenvolvida em **Spring Boot**, fornec
 
 - **POST** `/api/sales`
     - **Descrição:** Registra uma nova venda.
+    - **Headers:** `Authorization: Bearer <token>`
     - **Request Body:**
       ```json
       {
